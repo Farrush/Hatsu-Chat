@@ -4,7 +4,8 @@ import { useState } from 'react'
 export default function UserInput(props: {send: any}) {
     const [msg, setMsg] = useState<string>('')
     async function sendMessage() {
-        
+        if(msg.length <= 1)
+            return
         props.send(msg)
         setMsg('')
     }

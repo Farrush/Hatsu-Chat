@@ -17,6 +17,7 @@ export default function Page() {
         ])
     }, [])
     async function sendMessage(content: string) {
+        
         const newMessages = messages
         newMessages.push({ role: 'user', content })
         setMessages(newMessages)
@@ -32,6 +33,7 @@ export default function Page() {
         else{
             setMessages(prev => [...prev, { role: 'assistant', content:data.error}]);
         }
+        
     }
 
     return (

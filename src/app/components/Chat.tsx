@@ -11,14 +11,14 @@ export default function Chat(props: {messages:{role: string, content: string}[]}
                         if(msg.role === 'assistant')
                         return(<div key={msg.content} className=" text-neutral-900 flex gap-2.5">
                             <Image src={hatsuPhoto} alt="Foto de Perfil de Hatsu" className="w-8 h-8 bg-white rounded-2xl"/>
-                                <div className=" p-0.5 text-wrap h-auto max-w-160 break-words text-white">
-                                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                                <div className=" p-0.5 w-auto max-w-[100dvw] md:max-w-2/3 text-wrap h-auto break-words break-all overflow-x-auto text-white">
+                                    <ReactMarkdown >{msg.content}</ReactMarkdown>
                                 </div>
                             </div>)
                         else
                         return(<div key={msg.content} className=" gap-2.5 text-neutral-900 flex flex-row-reverse">
                                 <Image src={userPhoto} alt="Foto de Perfil" className="w-8 h-8 rounded-2xl"/>
-                                <div className="p-0.5 max-w-160 text-wrap h-auto break-words text-white">
+                                <div className="p-0.5 w-auto max-w-[100dvw] md:max-w-2/3 text-wrap h-auto break-words break-all overflow-x-auto text-white">
                                     <ReactMarkdown>{msg.content}</ReactMarkdown>
                                 </div>
                 
