@@ -35,7 +35,7 @@ export default function Page() {
     }
 
     return (
-        <div className="flex flex-col h-[100vh]" >
+        <div className="flex flex-col h-[100dvh]" >
             <Chat messages={messages} />
             <UserInput send={sendMessage} />
         </div>
