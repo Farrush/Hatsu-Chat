@@ -25,7 +25,11 @@ export default function Page(props: any) {
             headers: { 'Content-Type': 'application/json' }
         })
         const data = await res.json()
-        setMessages(prev => [...prev, data.reply]);
+        if(data.reply)
+            setMessages(prev => [...prev, data.reply]);
+        else{
+            setMessages(prev => [...prev, { role: 'assistant', content:data.error}]);
+        }
     }
 
     return (
