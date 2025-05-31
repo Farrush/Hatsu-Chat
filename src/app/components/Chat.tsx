@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import Image from "next/image"
 import hatsuPhoto from "../../../public/logohatsu.png"
-import userPhoto from "../../../public/palm main.png"
+import userPhoto from "../../../public/user.png"
 export default function Chat(props: {messages:{role: string, content: string}[]}){
 
     return(
