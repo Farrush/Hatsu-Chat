@@ -6,7 +6,7 @@ export default function Layout({
 }>){
     return(
         <div
-            className="bg-neutral-800  h-[100vh] text-white"
+            className="bg-neutral-800 text-white"
         >
         {children}
       </div>
