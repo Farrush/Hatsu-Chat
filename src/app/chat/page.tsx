@@ -19,7 +19,7 @@ export default function Page() {
         newMessages.push({ role: 'user', content })
         setMessages(newMessages)
         
-        const res = await fetch('http://localhost:3000/api/chat',{
+        const res = await fetch('/api/chat',{
             method: 'POST',
             body: JSON.stringify({messages: newMessages}),
             headers: { 'Content-Type': 'application/json' }
