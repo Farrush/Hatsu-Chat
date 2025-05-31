@@ -33,7 +33,7 @@ export default function Page() {
     }
 
     return (
-        <div className="relative h-dvh">
+        <div className="relative h-svh">
             <Chat messages={messages} />
             <UserInput send={sendMessage} />
         </div>

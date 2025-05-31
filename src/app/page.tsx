@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div className="">
-      <main className="w-dvw pt-5 m-auto h-svh text-center flex flex-col items-center bg-neutral-800 text-white gap-10">
+      <main className="w-dvw pt-5 m-auto h-dvh text-center flex flex-col items-center bg-neutral-800 text-white gap-10">
         <Image src={logo} alt="Logo da Hatsu" className="w-40 md:w-60"/>
         <h1 className="text-xl md:text-4xl">Bem Vindo ao Hatsu Chat</h1>
         <button onClick={()=> redirect('/chat')} className="cursor-pointer text-xl md:text-2xl rounded-2xl p-2 bg-indigo-800 hover:scale-110">Comece a conversar</button>
