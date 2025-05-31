@@ -2,8 +2,10 @@
 import Chat from '@/app/components/Chat'
 import { useState, useEffect } from 'react'
 import UserInput from '../components/UserInput'
+import { useWHeight } from '@/app/hooks/useWHeight';
 export default function Page() {
     const [messages, setMessages] = useState<{ role: string, content: string }[]>([])
+    const height = useWHeight();
     useEffect(() => {
         setMessages([
             {
@@ -33,7 +35,7 @@ export default function Page() {
     }
 
     return (
-        <div className="flex flex-col h-[100dvh]">
+        <div className="flex flex-col" style={{height}}>
             <Chat messages={messages} />
             <UserInput send={sendMessage} />
         </div>
