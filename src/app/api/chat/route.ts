@@ -1,21 +1,11 @@
-//import { InferenceClient, HfInference } from '@huggingface/inference'
-import { streamText } from 'ai';
-import { deepinfra } from '@ai-sdk/deepinfra';
-
 import { NextRequest, NextResponse } from 'next/server';
 import { InferenceClient } from "@huggingface/inference";
 
+
 const client = new InferenceClient(process.env.HF_TOKEN);
-
-//const hf = new HfInference(process.env.HF_TOKEN);
-//export const runtime = 'edge';
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function POST(req: NextRequest) {
-
-
     const { messages } = await req.json()
-    const model = 'meta-llama/Meta-Llama-3-8B-Instruct'
-    const url = `https://api-inference.huggingface.co/models/${model}`;
 
     try {
       //throw new Error('Payment Required', {cause: 'Quota exhausted'})
@@ -28,6 +18,7 @@ export async function POST(req: NextRequest) {
         });
 
         return NextResponse.json({ reply: chatCompletion.choices[0].message });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       const erro: string = error.response?.data || error.message
     console.error('Erro na API:', erro);

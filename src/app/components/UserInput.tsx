@@ -1,6 +1,7 @@
 "use client"
-import { useState, useEffect } from 'react'
-export default function UserInput(props: any) {
+import { useState } from 'react'
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function UserInput(props: {send: any}) {
     const [msg, setMsg] = useState<string>('')
     async function sendMessage() {
         
