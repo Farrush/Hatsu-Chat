@@ -9,10 +9,10 @@ export default function UserInput(props: {send: any}) {
         setMsg('')
     }
     return (
-        <div className="absolute bottom-0 shadow-indigo-500 shadow h-2/12 w-dvw flex flex-row gap-4 md:gap-8 justify-center items-center">
+        <div className="sticky bottom-0 shadow-indigo-500 shadow h-2/12 w-dvw flex flex-row gap-4 md:gap-8 justify-center items-center">
             <textarea value={msg} onChange={e => setMsg(e.target.value)} placeholder="Pergunte algo..."
-                className="text-neutral-200 bg-neutral-700 outline-none rounded-xs p-2 w-2xs md:w-2xl" maxLength={146} style={{resize: 'none'}} rows={2}/>
-            <button className="cursor-pointer text-xl rounded-xl px-2 py-1 bg-indigo-800 hover:scale-110"
+                className="text-neutral-200 bg-neutral-700 outline-none rounded-xs text-sm md:text-base h-15 md:h-16 p-0.5 md:p-1 w-8/12 md:w-2xl" maxLength={146} style={{resize: 'none'}} rows={2}/>
+            <button className="cursor-pointer text-lg md:text-xl rounded-xl px-2 py-1 bg-indigo-800 hover:scale-110"
                 onClick={sendMessage}>Enviar</button>
         </div>
     )
