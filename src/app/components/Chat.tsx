@@ -2,10 +2,19 @@ import ReactMarkdown from 'react-markdown';
 import Image from "next/image"
 import hatsuPhoto from "../../../public/logohatsu.png"
 import userPhoto from "../../../public/user.png"
-export default function Chat(props: {messages:{role: string, content: string}[]}){
+import { useEffect, useRef } from 'react';
+export default function Chat(props: {messages: {
+role: string, content: string
+}[]}){
+  const bottomRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if(bottomRef.current)
+        bottomRef.current.scrollTop = bottomRef.current.scrollHeight - bottomRef.current.clientHeight;
+  }, [props.messages]);
 
     return(
-        <div id="chat-box" className="bg-neutral-800 w-dvw px-3 h-10/12 pt-5 max-h-10/12 md:w-2/3 md:m-auto md:px-0.5 flex flex-col gap-9 overflow-y-auto">
+        <div ref={bottomRef} id="chat-box" className="bg-neutral-800 w-dvw px-3 h-10/12 pt-5 max-h-10/12 md:w-2/3 md:m-auto md:px-0.5 flex flex-col gap-9 overflow-y-auto">
                 {props.messages.map((msg: {role: string, content: string}) => {
                     if(msg.role !== 'system')
                         if(msg.role === 'assistant')
