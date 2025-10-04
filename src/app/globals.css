@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+#chat-box {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+
